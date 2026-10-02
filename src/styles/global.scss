@@ -1,0 +1,54 @@
+@use './variables' as *;
+
+:root,
+:root[data-theme='light'] {
+  --ml-bg:            #{$bg-light};
+  --ml-surface:       #{$surface-light};
+  --ml-surface-hover: #{$surface-hover-light};
+  --ml-text:          #{$text-light};
+  --ml-text-muted:    #{$text-muted-light};
+  --ml-border:        #{$border-light};
+  --ml-primary:       #{$maple-red};
+  --ml-accent:        #{$maple-orange};
+  --ml-amber:         #{$maple-amber};
+  --ml-shadow:        #{$shadow-light};
+}
+
+:root[data-theme='dark'] {
+  --ml-bg:            #{$bg-dark};
+  --ml-surface:       #{$surface-dark};
+  --ml-surface-hover: #{$surface-hover-dark};
+  --ml-text:          #{$text-dark};
+  --ml-text-muted:    #{$text-muted-dark};
+  --ml-border:        #{$border-dark};
+  --ml-primary:       #{$maple-red};
+  --ml-accent:        #{$maple-orange};
+  --ml-amber:         #{$maple-amber};
+  --ml-shadow:        #{$shadow-dark};
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  transition: background $transition, color $transition;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.ant-btn-primary {
+  background: var(--ml-primary) !important;
+  border-color: var(--ml-primary) !important;
+  &:hover {
+    background: var(--ml-accent) !important;
+    border-color: var(--ml-accent) !important;
+  }
+}

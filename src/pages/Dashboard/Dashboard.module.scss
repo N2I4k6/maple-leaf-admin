@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+.card {
+  @include card;
+  padding: 24px;
+
+  @include mobile {
+    padding: 16px;
+  }
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--ml-primary);
+  line-height: 1.1;
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.label {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ml-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.link {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ml-accent);
+
+  &:hover { text-decoration: underline; }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}

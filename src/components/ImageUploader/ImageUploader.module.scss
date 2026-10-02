@@ -1,0 +1,49 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.preview {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid var(--ml-border);
+  overflow: hidden;
+  background: var(--ml-surface-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.empty {
+  font-size: 24px;
+  opacity: 0.4;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--ml-text-muted);
+}
